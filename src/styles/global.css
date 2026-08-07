@@ -1,0 +1,82 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: 100%;
+}
+
+html {
+  /*
+   * يحجز مكان شريط التمرير دائمًا. بدونه كان رفع قفل التمرير بعد الفتح
+   * يُظهر الشريط فجأة فيتغيّر عرض الصفحة وتقع إزاحة تخطيط في آخر الحركة.
+   */
+  scrollbar-gutter: stable;
+  background: var(--ivory-200);
+}
+
+body {
+  font-family: var(--font-ui);
+  color: var(--ink);
+  background: var(--ivory-200);
+  overflow-x: hidden;
+  overscroll-behavior-y: none;
+}
+
+/* تمنع التمرير الأفقي مهما بلغ حجم الزخارف */
+#root {
+  overflow-x: clip;
+}
+
+button {
+  font-family: inherit;
+  color: inherit;
+}
+
+a {
+  color: var(--gold-500);
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold-500);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* الصور الزخرفية لا تُنتقى ولا تُسحب */
+img[aria-hidden='true'] {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* نص عربي متوازن */
+.balance {
+  text-wrap: pretty;
+}
+
+/* للقارئات فقط */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
