@@ -208,7 +208,93 @@ body { color: var(--ink); }
   .venue-arch { margin-inline: -6%; }
 }
 
+/* Continuous mobile composition: shared art overlaps replace section gaps. */
+.letter-gate { background: var(--paper-light); transition: opacity .65s ease 1.7s; }
+.letter-gate__scene { width: min(92vw, 620px); transform: translateY(-3vh); }
+.letter-gate__caption { bottom: auto; top: calc(47% + min(27vw, 170px)); font-size: 21px; }
+.letter-gate__seal { width: 78px; height: 78px; }
+.letter-gate__paper { background: var(--paper-light); box-shadow: none; }
+.letter-gate__paper span { transition: opacity .3s ease .9s; }
+.letter-gate[data-open] .letter-gate__paper { animation: paper-unfold 1.65s .45s cubic-bezier(.4,0,.2,1) both; }
+.letter-gate[data-open] .letter-gate__paper span { opacity: 0; }
+@keyframes paper-unfold {
+  0% { opacity: 0; transform: translateY(30%) scale(.78); }
+  25% { opacity: 1; transform: translateY(-45%) scale(1); }
+  55% { transform: translateY(-30%) scale(1.5); }
+  100% { opacity: 1; transform: translateY(0) scale(8); }
+}
+.storybook-hero { min-height: 790px; padding: 150px 22px 0; }
+.storybook-hero__blessing { font-size: clamp(23px,6vw,32px); margin-bottom: 26px; }
+.storybook-hero__names { font-size: clamp(66px,18vw,98px); }
+.storybook-hero__divider { width: 66%; margin-top: -8px; }
+.storybook-hero__couple { width: 153%; left: -26.5%; bottom: -5px; }
+.storybook-hero::after { height: 45px; }
+.storybook-hero__flock { top: 395px; opacity: .12; }
+.invitation-message { padding: 0 0 20px; margin-top: -12px; }
+.invitation-paper { width: 114%; max-width: none; margin-inline: -7%; aspect-ratio: 1.2; }
+.invitation-paper__content { inset: 19% 19% 20%; }
+.invitation-message__copy { font-size: 19px; line-height: 1.65; margin-block: 5px; }
+.invitation-message__eyebrow { display: block; font-size: 14px; }
+.invitation-message h2 { font-size: 29px; }
+.countdown-story { padding: 12px 22px 38px; }
+.gold-divider { width: min(60%, 280px); margin-block: -6px; }
+.count { gap: 8px; margin-top: 5px; }
+.count__unit { display: flex; flex-direction: column; align-items: center; justify-content: center; aspect-ratio: .88; padding: 10px 2px; border: 1px solid #bba36b; border-radius: 48% 52% 46% 54%; background: radial-gradient(ellipse, #f9f4e4 30%, #e6dfc8 100%); outline: 1px solid #d8c99f; outline-offset: -5px; }
+.count__unit + .count__unit::before { display: none; }
+.count__value { font-size: clamp(33px,9vw,46px); }
+.count__label { font-size: 15px; margin-top: 4px; }
+.countdown-story::after, .calendar-story::before { content: ''; position: absolute; z-index: -1; width: 170px; height: 170px; background: url('/assets/new-theme/07-top-botanical-garland.webp') left top/360px auto no-repeat; opacity: .28; pointer-events: none; }
+.countdown-story::after { left: -58px; bottom: -64px; transform: rotate(170deg); }
+.events-story { padding: 20px 24px 10px; }
+.events-story__list { margin-top: 4px; }
+.event-scene { padding: 22px 8px 28px; }
+.event-scene__medallion { width: 52px; height: 52px; margin-bottom: 7px; }
+.event-scene__date { margin-bottom: 5px; font-size: 20px; }
+.event-scene__weekday { font-size: 16px; }
+.event-scene__detail, .photography-note { font-size: 16px; }
+.photography-note { padding-inline: 6px; }
+.photography-note svg { flex-shrink: 0; }
+.section { padding: 20px 28px; }
+.section--tight { padding-block: 20px 26px; }
+.calendar-story { background: radial-gradient(ellipse, rgba(218,208,166,.27), transparent 72%); }
+.calendar-story .wood-card::before { display: none; }
+.calendar-story::before { right: -65px; top: -22px; transform: rotate(85deg); }
+.cal__cell { font-size: 18px; }
+.cal__cell[data-kind='main'] { outline: 1px solid var(--gold); outline-offset: 3px; }
+.venue-story { padding: 8px 0 12px; }
+.venue-arch { width: 132%; max-width: none; margin-inline: -16%; aspect-ratio: 1.3333; }
+.venue-arch__content { inset: 27% 28% 12%; }
+.venue-arch__content h2 { font-size: clamp(25px,6.7vw,38px); }
+.venue-arch__content p { font-size: 16px; }
+.venue-arch__content button { padding: 12px 17px; margin-top: 12px; border: 0; border-radius: 0; background: #d9c493; color: #484832; clip-path: polygon(7% 0,93% 0,100% 25%,97% 75%,90% 100%,10% 100%,3% 75%,0 25%); font-size: 16px; outline-offset: 0; }
+.venue-arch__content button:focus-visible { background: #bba16b; text-decoration: underline; }
+.storybook-closing { min-height: 570px; padding: 55px 30px 290px; }
+.storybook-closing__flock { top: 0; width: 72%; opacity: .3; }
+.storybook-closing__secondary { margin-block: 8px; font-size: 20px; }
+.storybook-closing__names { margin-top: 15px; font-size: 46px; }
+.storybook-closing__meadow { position: absolute; bottom: -25px; width: 130%; height: auto; left: -15%; opacity: .75; pointer-events: none; }
+.storybook-closing__garland { bottom: -10px; width: 145%; opacity: .7; }
+.gramophone-control { width: 98px; height: 98px; left: max(3px, calc((100vw - min(100vw, var(--shell-max))) / 2 + 3px)); }
+.gramophone-control__record { background: conic-gradient(#39392e, #8b8461, #39392e 35%, #39392e 85%, #8b8461); }
+.flying-bird--high { animation-name: bird-flight-right; }
+.flying-bird--low { animation-name: bird-flight-left; }
+.flying-bird--hover { left: 18%; animation: bird-hover var(--bird-duration) var(--bird-delay) ease-in-out infinite; opacity: var(--bird-opacity); }
+@keyframes bird-flight-right { 0%{opacity:0;transform:translate(0,70px) rotate(-8deg)} 12%{opacity:var(--bird-opacity)} 45%{transform:translate(48vw,-25px) rotate(5deg)} 75%{opacity:var(--bird-opacity);transform:translate(85vw,-100px) rotate(-6deg)} 90%,100%{opacity:0;transform:translate(115vw,-145px)} }
+@keyframes bird-flight-left { 0%,8%{opacity:0;transform:translate(0,-15px)} 20%{opacity:var(--bird-opacity)} 48%{transform:translate(-48vw,35px) rotate(-7deg)} 80%{opacity:var(--bird-opacity);transform:translate(-85vw,-35px) rotate(4deg)} 95%,100%{opacity:0;transform:translate(-115vw,-65px)} }
+@keyframes bird-hover { 0%,100%{transform:translate(0,0) rotate(-5deg)} 40%{transform:translate(35px,-34px) rotate(6deg)} 75%{transform:translate(10px,-13px) rotate(-2deg)} }
+@media (min-width: 700px) {
+  .storybook-hero { min-height: 1080px; padding-top: 225px; }
+  .invitation-paper__content { inset: 23% 20%; }
+  .invitation-message__copy { font-size: 25px; }
+  .storybook-closing { padding-bottom: 310px; }
+}
+@media (max-width: 374px) {
+  .storybook-hero { min-height: 755px; padding-top: 145px; }
+  .invitation-message__copy { font-size: 18px; }
+  .venue-arch__content { inset-inline: 28%; }
+}
 @media (prefers-reduced-motion: reduce) {
+  .letter-gate[data-open] .letter-gate__paper { animation: none; }
   .flying-bird { display: none; }
   .letter-gate__flap, .letter-gate__paper, .letter-gate__envelope, .letter-gate { transition-duration: .01ms; transition-delay: 0ms; }
   .gramophone-control, .gramophone-control__record { animation: none !important; }

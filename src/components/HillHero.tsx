@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { AmbientBirdLayer, BirdFlock, BotanicalGarland, GoldDivider, THEME_ASSET } from './ThemeArt';
+import { BirdFlock, BotanicalGarland, GoldDivider, THEME_ASSET } from './ThemeArt';
 
 interface Props { play: boolean }
 
@@ -9,10 +9,9 @@ export function HillHero({ play }: Props) {
   return (
     <section className="storybook-hero" aria-labelledby="hero-names">
       <BotanicalGarland className="storybook-hero__garland" />
-      <AmbientBirdLayer />
       <BirdFlock className="storybook-hero__flock" />
       <motion.div className="storybook-hero__words" initial={initial} animate={play ? { opacity: 1, y: 0 } : undefined}
-        transition={{ duration: reduced ? .2 : 1.1, ease: [0.16, 1, 0.3, 1] }}>
+        transition={{ duration: reduced ? .2 : 1.1, delay: reduced ? 0 : 1.65, ease: [0.16, 1, 0.3, 1] }}>
         <p className="storybook-hero__blessing"><span>بارك الله لهما وبارك عليهما</span><span>وجمع بينهما في الخير</span></p>
         <h1 id="hero-names" className="storybook-hero__names" dir="ltr"><span>yousef <i>+</i></span><span>ghazal</span></h1>
         <p className="storybook-hero__names-ar">يوسف وغزل</p>

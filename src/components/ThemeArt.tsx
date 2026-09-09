@@ -32,9 +32,9 @@ export function FlyingBird({ direction = 'right', size = 70, duration = 18, dela
 export function AmbientBirdLayer({ compact = false }: { compact?: boolean }) {
   return (
     <div className="ambient-birds" aria-hidden="true">
-      <FlyingBird direction="right" size={compact ? 52 : 70} duration={22} delay={-5} top="18%" path="high" />
-      <FlyingBird direction="left" size={compact ? 46 : 62} duration={25} delay={-14} top="42%" path="low" opacity={.58} />
-      {!compact && <FlyingBird direction="right" size={48} duration={28} delay={-20} top="68%" path="hover" opacity={.46} />}
+      <FlyingBird direction="right" size={compact ? 52 : 66} duration={12} delay={-3} top="28%" path="high" />
+      <FlyingBird direction="left" size={compact ? 46 : 58} duration={16} delay={-9} top="56%" path="low" opacity={.64} />
+      {!compact && <FlyingBird direction="right" size={46} duration={10} delay={-6} top="72%" path="hover" opacity={.56} />}
     </div>
   );
 }

@@ -17,7 +17,7 @@ export function ArabicCalendar({ onResult }: Props) {
   const { weekdayNames, monthName, monthLabel, mainDay, buttonLabel } = INVITATION.calendar;
 
   return (
-    <section aria-labelledby="calendar-heading" className="section section--tight">
+    <section aria-labelledby="calendar-heading" className="section section--tight calendar-story">
       <Reveal kind="depth" duration={0.88}>
         <WoodCard>
           <Reveal kind="carve" duration={0.8}>

@@ -49,7 +49,7 @@ const addHours = (time: string, hours: number) => {
 };
 
 export const INVITATION = {
-  pageTitle: `دعوة زفاف ${COUPLE_AR}`,
+  pageTitle: `Ghazal Invitation | دعوة زفاف ${COUPLE_AR}`,
   pageDescription: `نتشرف بدعوتكم لمشاركتنا أفراح ${COUPLE_AR}`,
 
   /** بوّابة الدخول — المشهد الأول */
