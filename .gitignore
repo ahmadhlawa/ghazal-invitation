@@ -1,5 +1,7 @@
 node_modules
 dist
+.chrome-qa*/
+.edge-qa/
 .DS_Store
 *.local
 .vite

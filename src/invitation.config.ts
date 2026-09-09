@@ -26,17 +26,18 @@ export interface InvitationEvent {
 }
 
 /* ── الأسماء: مصدر واحد تُشتقّ منه كل النصوص ── */
-const GROOM = 'عدي';
-const BRIDE = 'W';
+const GROOM = 'yousef';
+const BRIDE = 'ghazal';
+const COUPLE_DISPLAY_AR = 'يوسف وغزل';
 /** الصيغة العربية المستعملة في العناوين والرسائل */
-const COUPLE_AR = `${GROOM} و ${BRIDE}`;
+const COUPLE_AR = COUPLE_DISPLAY_AR;
 
 /* ── موعد الزفاف ──
    السبت ٢٩ أغسطس ٢٠٢٦، الساعة ٦:٠٠ مساءً بتوقيت فلسطين. */
-const WEDDING_DATE = '2026-08-29';
-const WEDDING_TIME = '18:00';
+const WEDDING_DATE = '2026-09-19';
+const WEDDING_TIME = '17:00';
 /** الصيغة العربية المعروضة للساعة */
-const WEDDING_TIME_AR = 'الساعة 6:00 مساءً';
+const WEDDING_TIME_AR = 'الساعة 5:00 مساءً';
 /** مدّة الحفل بالساعات — تُستعمل لحساب نهاية الموعد */
 const WEDDING_DURATION_H = 5;
 /** إزاحة توقيت فلسطين — تجعل لحظة البدء مطلقة لا نسبية بمنطقة الزائر */
@@ -53,9 +54,9 @@ export const INVITATION = {
 
   /** بوّابة الدخول — المشهد الأول */
   gate: {
-    kicker: 'دعوة زفاف',
-    hint: 'اضغط على القفل لفتح البوّابة',
-    lockLabel: 'افتح البوّابة',
+    kicker: 'دعوة زفاف يوسف وغزل',
+    hint: 'اضغط لفتح الدعوة',
+    lockLabel: 'افتح الدعوة',
   },
 
   groomName: GROOM,
@@ -66,49 +67,40 @@ export const INVITATION = {
   blessing: 'بارك الله لهما وبارك عليهما وجمع بينهما في الخير',
 
   /** جملة الانتقال بين المشهد الأول وبرنامج الأفراح */
-  invitationLine: 'نتشرف بدعوتكم لمشاركتنا فرحتنا',
+  invitationLine: 'بكل المحبة نتشرف بدعوتكم لمشاركتنا فرحتنا',
 
   eventsHeading: 'مواعيد الفرح',
 
   events: [
     {
-      id: 'henna-women',
-      icon: 'henna',
-      weekday: 'الخميس',
-      date: '27 / 08 / 2026',
-      title: 'ليلة الحنّة للنساء',
-      place: 'صالة الخدمات',
-      details: [],
-    },
-    {
-      id: 'men-evening',
-      icon: 'men',
-      weekday: 'الخميس',
-      date: '27 / 08 / 2026',
-      title: 'سهرة الرجال',
-      place: 'ديوان آل الهرش',
-      details: [],
+      id: 'women-evening',
+      icon: 'women',
+      weekday: 'الأربعاء',
+      date: '16 / 09 / 2026',
+      title: 'سهرة النساء',
+      place: 'قاعة شاهين',
+      details: ['يُمنع التصوير داخل قاعة النساء'],
     },
     {
       id: 'wedding',
       icon: 'rings',
       weekday: 'السبت',
-      date: '29 / 08 / 2026',
-      title: 'حفل زفاف عدي',
-      place: 'صالة الخدمات',
+      date: '19 / 09 / 2026',
+      title: 'حفل زفاف يوسف وغزل',
+      place: 'قاعة القصر الذهبي 1 – دورا',
       details: [WEDDING_TIME_AR],
       primary: true,
     },
   ] satisfies InvitationEvent[] as InvitationEvent[],
 
   calendar: {
-    /** أغسطس 2026 */
+    /** سبتمبر 2026 */
     year: 2026,
-    month: 8,
-    monthName: 'أغسطس',
-    monthLabel: 'أغسطس 2026',
-    softHighlight: [27],
-    mainDay: 29,
+    month: 9,
+    monthName: 'سبتمبر',
+    monthLabel: 'سبتمبر 2026',
+    softHighlight: [16],
+    mainDay: 19,
     /** الأسبوع يبدأ بالسبت */
     weekdayNames: ['س', 'ح', 'ن', 'ث', 'ر', 'خ', 'ج'],
     buttonLabel: 'إضافة حفل الزفاف إلى التقويم',
@@ -131,25 +123,25 @@ export const INVITATION = {
     heading: 'باقي على فرحتنا',
     /** الترتيب: الأيام ← الساعات ← الدقائق ← الثواني */
     labels: {
-      days: 'الأيام',
-      hours: 'الساعات',
-      minutes: 'الدقائق',
-      seconds: 'الثواني',
+      days: 'يوم',
+      hours: 'ساعة',
+      minutes: 'دقيقة',
+      seconds: 'ثانية',
     },
     doneMessage: 'تمت الفرحة بحمد الله',
   },
 
   venue: {
     heading: 'موقع القاعة',
-    name: 'صالة الخدمات',
-    latitude: 31.4754151,
-    longitude: 35.0662954,
-    mapsUrl: 'https://www.google.com/maps?q=31.4754151,35.0662954',
+    name: 'قاعة القصر الذهبي 1 – دورا',
+    latitude: '',
+    longitude: '',
+    mapsUrl: 'https://maps.app.goo.gl/nPu7Zps53mQwEEFa8',
     buttonLabel: 'فتح موقع القاعة',
   },
 
   closing: {
-    primary: 'دام دياركم عامرة بالأفراح',
+    primary: 'بارك الله لهما وبارك عليهما',
     secondary: 'حضوركم يسعدنا ويكمل فرحتنا',
   },
 

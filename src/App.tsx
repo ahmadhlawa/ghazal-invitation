@@ -12,9 +12,7 @@ import { ShareInvitation } from './components/ShareInvitation';
 import { InvitationClosing } from './components/InvitationClosing';
 import { AudioController } from './components/AudioController';
 import { Toast } from './components/Toast';
-import { Particles } from './ornaments/Particles';
-import { LeafDivider } from './ornaments/Ornament';
-import { Reveal } from './components/Reveal';
+import { AmbientBirdLayer } from './components/ThemeArt';
 import { GATE_OPEN_MS, GATE_OPEN_REDUCED_MS } from './motion';
 import { useAudioController } from './hooks/useAudioController';
 import { useToast } from './hooks/useToast';
@@ -44,10 +42,6 @@ const InvitationBody = memo(function InvitationBody({
       <EventsTimeline />
       <ArabicCalendar onResult={onCalendar} />
       <VenueLocation onOpenMap={onOpenMap} />
-
-      <Reveal kind="draw" className="section-rule" duration={0.9}>
-        <LeafDivider width={210} />
-      </Reveal>
 
       <ShareInvitation onCopied={onCopied} />
       <InvitationClosing />
@@ -131,10 +125,7 @@ export default function App() {
     <div lang="ar" dir="rtl" className="stage" data-open={opened || undefined}>
       {/* ── لوح الدعوة المركزي بعرض هاتف ── */}
       <div className="shell">
-        <div aria-hidden="true" className="shell__frame" />
-
-        {/* بتلات خفيفة تعبر بين الأقسام — بعد انتهاء البوّابة فقط */}
-        {openDone && <Particles count={5} variant="petal" peak={0.35} fixed />}
+        {openDone && <AmbientBirdLayer />}
 
         {/* المشهد الثالث: التلّة والأسماء — يبدأ مع انفتاح البوّابة */}
         <HillHero play={opened} />

@@ -1,28 +1,15 @@
-import { INVITATION } from '../invitation.config';
-import { Flourish } from '../ornaments/Ornament';
-import { Reveal } from './Reveal';
+import { InvitationPaper } from './ThemeArt';
 
-/**
- * جملة الوصل بين المشهد وبرنامج الأفراح.
- *
- * ليست عنوان قسم: لا لوحة ولا بطاقة — سطر منقوش وحده على العاج يتبعه
- * فاصل يُرسم من المركز، فيقرأ خطابًا من أهل الدعوة لا ترويسة موقع.
- */
 export function InvitationLine() {
   return (
-    <div className="invite-line">
-      <Reveal kind="carve" duration={0.95}>
-        <p className="invite-line__text brass-text balance">{INVITATION.invitationLine}</p>
-      </Reveal>
-
-      <Reveal
-        kind="draw"
-        delay={0.24}
-        duration={0.9}
-        style={{ display: 'flex', justifyContent: 'center', marginTop: '10px', opacity: 0.8 }}
-      >
-        <Flourish width={150} />
-      </Reveal>
-    </div>
+    <section className="invitation-message" aria-labelledby="invitation-message-title">
+      <InvitationPaper>
+          <p className="invitation-message__eyebrow">بسم الله الرحمن الرحيم</p>
+          <h2 id="invitation-message-title">دعوة من القلب</h2>
+          <p className="invitation-message__copy"><span>بكل المحبة نتشرف بدعوتكم</span><span>لمشاركتنا فرحتنا</span></p>
+          <p className="invitation-message__couple">يوسف <span>و</span> غزل</p>
+          <p className="invitation-message__date" dir="ltr">19 · 9 · 2026</p>
+      </InvitationPaper>
+    </section>
   );
 }

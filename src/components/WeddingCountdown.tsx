@@ -1,8 +1,7 @@
 import { memo, useEffect, useRef, useState } from 'react';
 import { INVITATION } from '../invitation.config';
-import { Flourish } from '../ornaments/Ornament';
 import { Reveal } from './Reveal';
-import { WoodCard } from './WoodCard';
+import { GoldDivider } from './ThemeArt';
 
 /**
  * لحظة الزفاف بإزاحة زمنية صريحة (+03:00) — تُقرأ مرة واحدة من الإعدادات.
@@ -112,24 +111,14 @@ export function WeddingCountdown() {
   const { heading } = INVITATION.countdown;
 
   return (
-    <section aria-label={heading} className="section section--tight">
-      <Reveal kind="depth" duration={0.85}>
-        <WoodCard surface="dark">
-          <Reveal kind="carve" delay={0.14} duration={0.8}>
-            <h2 className="cal__month brass-text">{heading}</h2>
-          </Reveal>
-
-          <Reveal
-            kind="draw"
-            delay={0.26}
-            duration={0.85}
-            style={{ display: 'flex', justifyContent: 'center', margin: '2px 0 13px', opacity: 0.85 }}
-          >
-            <Flourish width={170} />
-          </Reveal>
-
+    <section aria-label={heading} className="countdown-story">
+      <Reveal kind="rise" duration={0.85}>
+        <div className="countdown-story__wash">
+          <p className="story-eyebrow">نعدّ الأيام شوقاً</p>
+          <h2>{heading}</h2>
+          <GoldDivider />
           <CountdownBody />
-        </WoodCard>
+        </div>
       </Reveal>
     </section>
   );
