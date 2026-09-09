@@ -10,7 +10,7 @@ export function InvitationClosing() {
         <p id="closing-heading" className="storybook-closing__primary">{INVITATION.closing.primary}</p>
         <GoldDivider />
         <p className="storybook-closing__secondary">{INVITATION.closing.secondary}</p>
-        <p className="storybook-closing__names" dir="ltr">yousef + ghazal</p>
+        <p className="storybook-closing__names" dir="ltr">yousef &amp; ghazal</p>
       </Reveal>
       <img className="storybook-closing__meadow" src={`${THEME_ASSET}/08-couple-meadow.webp`} alt="" aria-hidden="true" loading="lazy" width="1120" height="630" />
       <BotanicalGarland className="storybook-closing__garland" />

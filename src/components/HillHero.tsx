@@ -13,7 +13,7 @@ export function HillHero({ play }: Props) {
       <motion.div className="storybook-hero__words" initial={initial} animate={play ? { opacity: 1, y: 0 } : undefined}
         transition={{ duration: reduced ? .2 : 1.1, delay: reduced ? 0 : 1.65, ease: [0.16, 1, 0.3, 1] }}>
         <p className="storybook-hero__blessing"><span>بارك الله لهما وبارك عليهما</span><span>وجمع بينهما في الخير</span></p>
-        <h1 id="hero-names" className="storybook-hero__names" dir="ltr"><span>yousef <i>+</i></span><span>ghazal</span></h1>
+        <h1 id="hero-names" className="storybook-hero__names" dir="ltr"><span>yousef <i>&amp;</i></span><span>ghazal</span></h1>
         <p className="storybook-hero__names-ar">يوسف وغزل</p>
         <GoldDivider className="storybook-hero__divider" />
       </motion.div>

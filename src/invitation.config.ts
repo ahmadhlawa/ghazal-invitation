@@ -6,7 +6,7 @@
  * قبل تحميل جافاسكربت — إن غيّرت الأسماء هنا فحدّثها هناك أيضًا.
  */
 
-export type EventIcon = 'henna' | 'men' | 'women' | 'rings';
+export type EventIcon = 'henna' | 'men' | 'rings';
 
 export interface InvitationEvent {
   id: string;
@@ -73,15 +73,6 @@ export const INVITATION = {
 
   events: [
     {
-      id: 'women-evening',
-      icon: 'women',
-      weekday: 'الأربعاء',
-      date: '16 / 09 / 2026',
-      title: 'سهرة النساء',
-      place: 'قاعة شاهين',
-      details: ['يُمنع التصوير داخل قاعة النساء'],
-    },
-    {
       id: 'wedding',
       icon: 'rings',
       weekday: 'السبت',
@@ -99,7 +90,7 @@ export const INVITATION = {
     month: 9,
     monthName: 'سبتمبر',
     monthLabel: 'سبتمبر 2026',
-    softHighlight: [16],
+    softHighlight: [],
     mainDay: 19,
     /** الأسبوع يبدأ بالسبت */
     weekdayNames: ['س', 'ح', 'ن', 'ث', 'ر', 'خ', 'ج'],

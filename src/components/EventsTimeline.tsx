@@ -4,18 +4,8 @@ import { EventGlyph } from '../ornaments/EventIcons';
 import { VIEWPORT } from './Reveal';
 import { GoldDivider } from './ThemeArt';
 
-function PhotographyNotice() {
-  return (
-    <div className="photography-note">
-      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 10h5l2-3h8l2 3h5v15H5zM11 17a5 5 0 1 0 10 0 5 5 0 0 0-10 0ZM4 4l24 24" /></svg>
-      <span>يُمنع التصوير داخل قاعة النساء</span>
-    </div>
-  );
-}
-
 function EventScene({ event, index }: { event: InvitationEvent; index: number }) {
   const reduced = useReducedMotion();
-  const isWomen = event.id === 'women-evening';
   return (
     <motion.li className={`event-scene ${event.primary ? 'event-scene--primary' : ''}`}
       initial={reduced ? { opacity: 0 } : { opacity: 0, y: 32 }} whileInView={{ opacity: 1, y: 0 }} viewport={VIEWPORT}
@@ -26,8 +16,7 @@ function EventScene({ event, index }: { event: InvitationEvent; index: number })
       <time className="event-scene__date" dateTime={event.date.split(' / ').reverse().join('-')}>{event.date}</time>
       <h3>{event.title}</h3>
       <p className="event-scene__place">{event.place}</p>
-      {event.details.filter(line => !line.includes('التصوير')).map(line => <p className="event-scene__detail" key={line}>{line}</p>)}
-      {isWomen && <PhotographyNotice />}
+      {event.details.map(line => <p className="event-scene__detail" key={line}>{line}</p>)}
     </motion.li>
   );
 }

@@ -135,8 +135,6 @@ body { color: var(--ink); }
 .event-scene__detail { margin: 4px 0; color: var(--ink-soft); font-size: 15px; }
 .event-scene__sprig { position: absolute; width: 90px; height: 80px; right: -20px; top: 15px; opacity: .18; background: url('/assets/new-theme/07-top-botanical-garland.webp') 5% 10%/430px auto no-repeat; transform: rotate(110deg); }
 .event-scene:nth-child(even) .event-scene__sprig { right: auto; left: -20px; transform: scaleX(-1) rotate(110deg); }
-.photography-note { display: inline-flex; align-items: center; gap: 10px; margin-top: 14px; padding: 8px 18px 9px; color: var(--olive-dark); background: linear-gradient(90deg,transparent,rgba(222,211,179,.42),transparent); font: 500 14px/1.55 var(--font-ui); }
-.photography-note svg { width: 23px; height: 23px; fill: none; stroke: var(--gold); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 
 /* Existing calendar logic, restyled as ink on the continuous paper */
 .section { position: relative; z-index: 4; padding: 68px 28px; }
@@ -251,9 +249,7 @@ body { color: var(--ink); }
 .event-scene__medallion { width: 52px; height: 52px; margin-bottom: 7px; }
 .event-scene__date { margin-bottom: 5px; font-size: 20px; }
 .event-scene__weekday { font-size: 16px; }
-.event-scene__detail, .photography-note { font-size: 16px; }
-.photography-note { padding-inline: 6px; }
-.photography-note svg { flex-shrink: 0; }
+.event-scene__detail { font-size: 16px; }
 .section { padding: 20px 28px; }
 .section--tight { padding-block: 20px 26px; }
 .calendar-story { background: radial-gradient(ellipse, rgba(218,208,166,.27), transparent 72%); }
